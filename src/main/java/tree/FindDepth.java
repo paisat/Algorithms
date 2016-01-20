@@ -32,7 +32,6 @@ public class FindDepth {
         System.out.println(obj.findDepth("0"));
         System.out.println(obj.findDepth("((00)0((0(00))))"));
 
-
     }
 
 

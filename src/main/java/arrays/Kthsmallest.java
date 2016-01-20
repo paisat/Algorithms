@@ -2,11 +2,10 @@ package arrays;
 
 /**
  * Created by sarvothampai on 18/01/16.
- *
- *
+ * <p/>
+ * <p/>
  * Time complexity : Average : O(N)
  * Worst Case complexity : O(N^2)
- *
  */
 public class Kthsmallest {
 

@@ -66,13 +66,7 @@ public class ConsecutiveNumberSeries {
                     for (int l = 0; l <= n4; l++) {
                         if (i + j + k + l > 1) {
                             if (i != 0) {
-                                System.out.println("i j k l " + i + " " + j + " " + k + " " + l);
-                                System.out.println(d1[i][j][k][l]);
-                                System.out.println(d2[i - 1][j][k][l]);
-                                System.out.println(d3[i - 1][j][k][l]);
-                                System.out.println(d4[i - 1][j][k][l]);
                                 d1[i][j][k][l] = d2[i - 1][j][k][l] + d3[i - 1][j][k][l] + d4[i - 1][j][k][l] % MOD;
-                                System.out.println(d1[i][j][k][l]);
                             }
                             if (j != 0) {
                                 d2[i][j][k][l] = d1[i][j - 1][k][l] + d3[i][j - 1][k][l] + d4[i][j - 1][k][l] % MOD;
