@@ -5,6 +5,12 @@ package Strings;
  * <p/>
  * <p/>
  * Time Complexity O(M+N)
+ *
+ *
+ * abcdabxabcdabcdabcy
+ *
+ * abcdabcy
+ *
  */
 public class KMPAlgorithm {
 

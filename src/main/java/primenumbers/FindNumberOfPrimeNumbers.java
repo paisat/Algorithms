@@ -2,16 +2,21 @@ package primenumbers;
 
 /**
  * Created by sarvothampai on 03/10/15.
+ * <p/>
+ * <p/>
+ * O(n * root n)
+ * <p/>
+ * <p/>
+ * O(n(log n)(log log n))
  */
 
 
 public class FindNumberOfPrimeNumbers {
 
 
+    public static void main(String[] args) {
 
-    public static void main(String []args){
-
-        FindNumberOfPrimeNumbers obj=new FindNumberOfPrimeNumbers();
+        FindNumberOfPrimeNumbers obj = new FindNumberOfPrimeNumbers();
         System.out.println(obj.countPrimes(120));
 
     }
@@ -26,16 +31,12 @@ public class FindNumberOfPrimeNumbers {
 
             boolean[] marked = new boolean[n + 1];
 
-            for (int i = 2; i <n  ; i++) {
+            for (int i = 2; i < n; i++) {
 
                 if (!marked[i]) {
                     count++;
 
                     int a = 2;
-                    if(i>Math.sqrt(n)){
-                        break;
-                    }
-
 
                     while (i * a <= n) {
 

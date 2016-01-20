@@ -17,6 +17,9 @@ package tree;
  * Note :
  * Same as foldable binary trees . In Foldable binary trees the tree has to be structutrally same.
  * Values need not be same.
+ *
+ * Time Complexity : O(N)
+ *
  */
 public class CheckIfATreeIsSymmetric {
 

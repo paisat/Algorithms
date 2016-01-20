@@ -23,14 +23,14 @@ public class FindDepth {
     public static void main(String[] args) {
 
         FindDepth obj = new FindDepth();
-        //System.out.println(obj.findDepth("(00)"));
-        //System.out.println(obj.findDepth("((00)0)"));
+        System.out.println(obj.findDepth("(00)"));
+        System.out.println(obj.findDepth("((00)0)"));
         System.out.println(obj.findDepth("((00)(00))"));
-//        System.out.println(obj.findDepth("((00)(0(00)))"));
-//        System.out.println(obj.findDepth("((00)(0(0(00))))"));
-//        System.out.println(obj.findDepth("x"));
-//        System.out.println(obj.findDepth("0"));
-//        System.out.println(obj.findDepth("(000)"));
+        System.out.println(obj.findDepth("((00)(0(00)))"));
+        System.out.println(obj.findDepth("((00)(0(0(00))))"));
+        System.out.println(obj.findDepth("x"));
+        System.out.println(obj.findDepth("0"));
+        System.out.println(obj.findDepth("((00)0((0(00))))"));
 
 
     }
@@ -43,9 +43,10 @@ public class FindDepth {
         }
 
         Stack<Character> parenthesisStack = new Stack<Character>();
+        Stack<Integer> nodeCount = new Stack<Integer>();
 
         int maxDepth = 0;
-        int nodeCount = 0;
+
 
         for (int i = 0; i < s.length(); i++) {
             char ch = s.charAt(i);
@@ -56,31 +57,46 @@ public class FindDepth {
 
             if (ch == '(') {
                 parenthesisStack.add(ch);
+                if (nodeCount.isEmpty()) {
+                    nodeCount.add(0);
+                } else {
+                    int count = nodeCount.pop();
+                    count++;
+                    nodeCount.push(count);
+                    nodeCount.push(0);
+                }
                 maxDepth = Math.max(maxDepth, parenthesisStack.size());
             } else if (ch == ')') {
                 if (parenthesisStack.isEmpty()) {
                     return -1;
                 }
 
-                nodeCount = nodeCount - 2;
-                if (nodeCount < 0) {
+                if (nodeCount.isEmpty() || nodeCount.peek() != 2) {
                     return -1;
                 }
 
+                nodeCount.pop();
                 parenthesisStack.pop();
             } else {
-                nodeCount++;
 
-                if (nodeCount > 2) {
+                if (nodeCount.isEmpty()) {
                     return -1;
                 }
+
+                int top = nodeCount.pop();
+
+                if (top == 2) {
+                    return -1;
+                }
+                top++;
+                nodeCount.add(top);
 
             }
 
 
         }
 
-        return (parenthesisStack.isEmpty() ) ? maxDepth - 1 : -1;
+        return (parenthesisStack.isEmpty() && nodeCount.isEmpty() ) ? maxDepth - 1 : -1;
 
 
     }

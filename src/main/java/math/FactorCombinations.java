@@ -29,6 +29,9 @@ import java.util.List;
  * [3, 4]
  * ]
  *
+ *
+ * n+r-1 C r
+ *
  * Time Complexity : O(N!)
  */
 public class FactorCombinations {

@@ -9,7 +9,7 @@ public class URLShotener {
     public static void main(String[] args) {
 
         URLShotener obj = new URLShotener();
-        String shortenedUrl=obj.getShortenedUrl(12345);
+        String shortenedUrl = obj.getShortenedUrl(12345);
         System.out.println(shortenedUrl);
         System.out.println(obj.getId(shortenedUrl));
     }

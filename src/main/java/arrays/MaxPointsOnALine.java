@@ -5,7 +5,18 @@ import java.util.Map;
 
 ///
 //  Created by sarvothampai on 17/01/16.
+
+
+
 // /
+
+
+/**
+ *
+ *
+ * GCD O(Log min(a,b))
+ *
+ * */
 public class MaxPointsOnALine {
 
 
@@ -32,7 +43,6 @@ public class MaxPointsOnALine {
             slopeCountMap.clear();
             int max = 0;
             int overlap = 0;
-            int vertical = 0;
 
             Point p1 = points[i];
 
@@ -44,8 +54,6 @@ public class MaxPointsOnALine {
                     overlap++;
 
 
-                } else if (p1.x == p2.x) {
-                    vertical++;
                 } else {
 
                     int y = p2.y - p1.y;
@@ -59,13 +67,12 @@ public class MaxPointsOnALine {
                     }
 
 
-                    if (slopeCountMap.get(x)!=null ) {
+                    if (slopeCountMap.get(x) != null) {
 
-                        if(slopeCountMap.get(x).get(y)!=null){
-                            slopeCountMap.get(x).put(y,slopeCountMap.get(x).get(y)+1);
-                        }
-                        else {
-                            slopeCountMap.get(x).put(y,1);
+                        if (slopeCountMap.get(x).get(y) != null) {
+                            slopeCountMap.get(x).put(y, slopeCountMap.get(x).get(y) + 1);
+                        } else {
+                            slopeCountMap.get(x).put(y, 1);
                         }
 
                     } else {
