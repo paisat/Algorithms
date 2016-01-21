@@ -17,7 +17,7 @@ import java.util.List;
  * <p/>
  * Time Complexity : O(N!)
  *
- * 
+ *
  * Yes, the reason of sorting is to skip duplicates. Take [1, 2, 2, 3] for example, when pos equals 0, we have below cases
 
  (1,2,2,3) (pos = 0, i = 0)
