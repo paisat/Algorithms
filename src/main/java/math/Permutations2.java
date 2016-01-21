@@ -16,6 +16,20 @@ import java.util.List;
  * [1,1,2], [1,2,1], and [2,1,1].
  * <p/>
  * Time Complexity : O(N!)
+ *
+ * 
+ * Yes, the reason of sorting is to skip duplicates. Take [1, 2, 2, 3] for example, when pos equals 0, we have below cases
+
+ (1,2,2,3) (pos = 0, i = 0)
+
+ (2,1,2,3) (pos = 0, i = 1)
+
+ (2,1,2,3) (pos = 0, i =2) skipped, since array[0]=array[2]; in other words, its subset (1,2,3) is the same as the second case (pos = 0, i=1)
+
+ (3,1,2,2) (pos = 0, i =3)
+
+ As we can see, the subset of the above four cases are still sorted. Amazing! Recursion continues.
+ *
  */
 public class Permutations2 {
 

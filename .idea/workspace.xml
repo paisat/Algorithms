@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a407617a-a3f6-4036-81df-5547414aff5a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Strings/CommonCharacterCount.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/Strings/TextFileIterable.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/arrays/MinimumAbsolute.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/math/IntegralPartOfLogBase2.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/dynamicprogramming/FindHowToPrintMaximumNumberOfA.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/dynamicprogramming/FindHowToPrintMaximumNumberOfA.java" afterPath="$PROJECT_DIR$/src/main/java/dynamicprogramming/CtrlVCtrlA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/arrays/FindRange$1.class" afterPath="$PROJECT_DIR$/target/classes/arrays/FindRange$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/arrays/FindRange.class" afterPath="$PROJECT_DIR$/target/classes/arrays/FindRange.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/backtracking/CanIWin.class" afterPath="$PROJECT_DIR$/target/classes/backtracking/CanIWin.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/math/Permutations2.class" afterPath="$PROJECT_DIR$/target/classes/math/Permutations2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/tree/FindDepth.class" afterPath="$PROJECT_DIR$/target/classes/tree/FindDepth.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/arrays/FindRange.java" afterPath="$PROJECT_DIR$/src/main/java/arrays/FindRange.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/arrays/Kthsmallest.java" afterPath="$PROJECT_DIR$/src/main/java/arrays/Kthsmallest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/arrays/MedianOfTwoSortedArrays.java" afterPath="$PROJECT_DIR$/src/main/java/arrays/MedianOfTwoSortedArrays.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/math/Permutations2.java" afterPath="$PROJECT_DIR$/src/main/java/math/Permutations2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tree/CheckIfATreeIsSymmetric.java" afterPath="$PROJECT_DIR$/src/main/java/tree/CheckIfATreeIsSymmetric.java" />
     </list>
     <ignored path="Algorithms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -99,26 +83,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ArrayDisp.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/arrays/ArrayDisp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrintNumberCombinations.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/arrays/PrintNumberCombinations.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="IntersectionOfTwoLinkedList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/linkedlist/IntersectionOfTwoLinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -149,11 +113,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FindRange.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConsecutiveNumberSeries.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dynamicprogramming/ConsecutiveNumberSeries.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="660">
+              <caret line="46" column="56" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CountDecodingsOfADigit.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dynamicprogramming/CountDecodingsOfADigit.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FindRange.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/arrays/FindRange.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+            <state relative-caret-position="210">
+              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
               <folding>
                 <element signature="e#1068#1223#0" expanded="true" />
                 <element signature="e#1222#1223#0" expanded="true" />
@@ -172,14 +156,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Permutations2.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Permutations2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/math/Permutations2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
               <folding>
-                <element signature="e#880#889#0" expanded="true" />
-                <element signature="e#1272#1281#0" expanded="true" />
+                <element signature="e#1342#1351#0" expanded="true" />
+                <element signature="e#1734#1743#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -295,8 +279,8 @@
         <option value="$PROJECT_DIR$/src/main/java/arrays/Kthsmallest.java" />
         <option value="$PROJECT_DIR$/src/main/java/dynamicprogramming/CtrlVCtrlA.java" />
         <option value="$PROJECT_DIR$/src/main/java/tree/CheckIfATreeIsSymmetric.java" />
-        <option value="$PROJECT_DIR$/src/main/java/math/Permutations2.java" />
         <option value="$PROJECT_DIR$/src/main/java/arrays/MedianOfTwoSortedArrays.java" />
+        <option value="$PROJECT_DIR$/src/main/java/math/Permutations2.java" />
       </list>
     </option>
   </component>
@@ -1259,12 +1243,12 @@
       <workItem from="1452971667773" duration="86768000" />
       <workItem from="1453262199493" duration="1682000" />
       <workItem from="1453272408620" duration="614000" />
-      <workItem from="1453273349600" duration="21350000" />
+      <workItem from="1453273349600" duration="22788000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1127363000" />
+    <option name="totallyTimeSpent" value="1128801000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1287,7 +1271,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3488045" sideWeight="0.55150217" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32911393" sideWeight="0.44849786" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.44849786" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2139,7 +2123,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/math/Permutations2.java</url>
-          <line>79</line>
+          <line>93</line>
           <properties />
           <option name="timeStamp" value="240" />
         </line-breakpoint>
@@ -2204,7 +2188,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/math/Permutations2.java</url>
-          <line>53</line>
+          <line>67</line>
           <properties />
           <option name="timeStamp" value="255" />
         </line-breakpoint>
@@ -2483,14 +2467,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dynamicprogramming/ConsecutiveNumberSeries.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/arrays/Kthsmallest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -2527,14 +2503,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="30" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dynamicprogramming/CountDecodingsOfADigit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -2603,17 +2571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/math/Permutations2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
-          <folding>
-            <element signature="e#880#889#0" expanded="true" />
-            <element signature="e#1272#1281#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/arrays/MedianOfStreamOfIntegers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -2648,11 +2605,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/arrays/FindRange.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="75" column="0" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
+        <state relative-caret-position="210">
+          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
           <folding>
             <element signature="e#1068#1223#0" expanded="true" />
             <element signature="e#1222#1223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dynamicprogramming/ConsecutiveNumberSeries.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="46" column="56" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dynamicprogramming/CountDecodingsOfADigit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/math/Permutations2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="3" selection-start-line="19" selection-start-column="3" selection-end-line="19" selection-end-column="3" />
+          <folding>
+            <element signature="e#1342#1351#0" expanded="true" />
+            <element signature="e#1734#1743#0" expanded="true" />
           </folding>
         </state>
       </provider>
