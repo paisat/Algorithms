@@ -2,6 +2,7 @@ package math;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -35,7 +36,7 @@ public class Permutations2 {
         if (nums != null && nums.length != 0) {
 
             Arrays.sort(nums);
-            List<Integer> list = new ArrayList<Integer>();
+            LinkedList<Integer> list = new LinkedList<Integer>();
             for (int i : nums) {
                 list.add(i);
             }
@@ -51,7 +52,9 @@ public class Permutations2 {
     public void permutationHelper(List<Integer> nums, List<Integer> permutation, List<List<Integer>> result) {
 
         if (nums.size() == 0) {
-            result.add(permutation);
+            List<Integer> perm=new ArrayList<Integer>();
+            perm.addAll(permutation);
+            result.add(perm);
         } else {
 
             for (int i = 0; i < nums.size(); i++) {
@@ -60,11 +63,11 @@ public class Permutations2 {
                     continue;
                 }
 
-                List<Integer> restNums = new ArrayList<Integer>();
-                permutation.add(nums.get(i));
-                restNums.addAll(nums.subList(0, i));
-                restNums.addAll(nums.subList(i + 1, nums.size()));
-                permutationHelper(restNums, permutation, result);
+                int element=nums.get(i);
+                permutation.add(element);
+                nums.remove(i);
+                permutationHelper(nums, permutation, result);
+                nums.add(i,element);
                 permutation.remove(permutation.size() - 1);
             }
 

@@ -3,6 +3,7 @@ package arrays;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -26,7 +27,7 @@ public class FindRange {
         FindRange obj = new FindRange();
         System.out.println(obj.findRange(Arrays.asList(new Interval(1, 3), new Interval(2, 5), new Interval(8, 10), new Interval(4, 9))));
         System.out.println(obj.findRange(Arrays.asList(new Interval(1, 3), new Interval(4, 5), new Interval(7, 10))));
-        System.out.println(obj.findRange(Arrays.asList(new Interval(3,6),new Interval(8,9),new Interval(1,5))));
+        System.out.println(obj.findRange(Arrays.asList(new Interval(3, 6), new Interval(8, 9), new Interval(1, 5))));
 
     }
 
@@ -44,13 +45,17 @@ public class FindRange {
         });
 
 
-        int lower_bound = 0;
-        int upper_boudn = 0;
+        Iterator<Interval> intervalIterator = list.iterator();
 
-        int result = 0;
+        int lower_bound = intervalIterator.next().start;
+        int upper_boudn = intervalIterator.next().end;
+
+        int result = upper_boudn - lower_bound;
 
 
-        for (Interval i : list) {
+        while (intervalIterator.hasNext()) {
+
+            Interval i = intervalIterator.next();
 
             if (i.start < upper_boudn) {
 
@@ -77,5 +82,37 @@ public class FindRange {
 
         return result;
     }
+
+//    int getTotalCoveredLength() {
+//        if (intervals.isEmpty()) {
+//            return 0;
+//        }
+//
+//        Collections.sort(intervals, new IntervalComparator());
+//
+//        int len = 0;
+//
+//        Interval prev = intervals.get(0);
+//
+//        for (int i = 1; i < intervals.size(); i++) {
+//            Interval curr = intervals.get(i);
+//
+//            if (overlaps(prev, curr)) {
+//                prev.start = prev.start;
+//                prev.end = Math.max(prev.end, curr.end);
+//            } else {
+//                len += prev.end - prev.start;
+//                prev = curr;
+//            }
+//        }
+//
+//        len += prev.end - prev.start; // Be very careful to check this case.
+//
+//        return len;
+//    }
+
+//    private boolean overlaps(Interval prev, Interval curr) {
+//        return prev.end > curr.start;
+//    }
 
 }
