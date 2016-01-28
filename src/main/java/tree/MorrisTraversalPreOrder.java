@@ -5,6 +5,9 @@ import java.util.List;
 
 /**
  * Created by sarvothampai on 16/12/15.
+ *
+ * Time Complexity : O(N)
+ *
  */
 public class MorrisTraversalPreOrder {
 

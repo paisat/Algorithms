@@ -4,7 +4,7 @@ package tree;
  * Created by sarvothampai on 01/01/16.
  *
  *
- * Time complexity : O(N)
+ * Time complexity : O(H + K)
  *
  */
 public class SecondlargestElementInBst {
@@ -16,7 +16,11 @@ public class SecondlargestElementInBst {
         root.right = new TreeNode(42);
         root.right.left = new TreeNode(99);
 
-        TreeNode result = obj.getSecondLargest(root);
+        TreeNode root1 = new TreeNode(137);
+
+
+        TreeNode result = obj.getSecondLargest(root1);
+
 
         if (result != null) {
             System.out.println(result.val);

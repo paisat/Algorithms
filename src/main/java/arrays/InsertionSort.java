@@ -6,6 +6,10 @@ package arrays;
  * complexity : O(N ^ 2)
  * <p/>
  * Best Time Complexity : O(N)
+ *
+ * Average is O(N^2)
+ *
+ *
  */
 public class InsertionSort {
 

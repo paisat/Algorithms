@@ -74,6 +74,7 @@ public class CheckIfATreeIsSymmetric {
 
     }
 
+//    call isMirror(root,root)
 
 //    boolean isMirror(Node node1, Node node2) {
 //

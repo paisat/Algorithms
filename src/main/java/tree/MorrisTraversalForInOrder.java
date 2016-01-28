@@ -5,12 +5,14 @@ import java.util.List;
 
 /**
  * Created by sarvothampai on 16/12/15.
+ * <p>
+ * Time Complexity : O(N)
  */
 public class MorrisTraversalForInOrder {
 
-    public static void main(String []args){
+    public static void main(String[] args) {
 
-        MorrisTraversalForInOrder obj=new MorrisTraversalForInOrder();
+        MorrisTraversalForInOrder obj = new MorrisTraversalForInOrder();
 
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);

@@ -22,4 +22,54 @@ package arrays;
  *
  */
 public class PerfectPowerGenerator {
+
+
+    public static void main(String []args){
+
+        PerfectPowerGenerator obj=new PerfectPowerGenerator();
+        System.out.println(obj.next());
+        System.out.println(obj.next());
+        System.out.println(obj.next());
+        System.out.println(obj.next());
+        System.out.println(obj.next());
+        System.out.println(obj.next());
+        System.out.println(obj.next());
+
+
+    }
+
+    private long next = 4;
+    private int base = 2;
+
+    /* b = logn/loga */
+    private int isPerfectPower(long n) {
+        for (int a=2; a<n/2; ++a) {
+            double b = Math.log(n) / Math.log(a);
+            if (b - (int)b == 0) return a;
+        }
+        return -1;
+    }
+
+
+
+
+    public Long next() {
+        long pre = next;
+        next = next*base;
+        for (long i=pre+1; i<next; ++i) {
+            int a = isPerfectPower(i);
+            if (a > 0) {
+                next = i;
+                System.out.println("a = "+a);
+                base=a;
+                break;
+            }
+        }
+        return pre;
+    }
+
+
+    public void reset() {
+        next = 4; base = 2;
+    }
 }

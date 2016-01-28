@@ -6,6 +6,10 @@ import java.util.Stack;
 
 /**
  * Created by sarvothampai on 06/10/15.
+ *
+ *
+ * Time Complexity : O(N)
+ *
  */
 public class IterativePreOrderTraversal {
 

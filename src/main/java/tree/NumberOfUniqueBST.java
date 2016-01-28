@@ -7,6 +7,9 @@ package tree;
  * <p/>
  * For example,
  * Given n = 3, there are a total of 5 unique BST's.
+ * <p>
+ *
+ * Time Complexity : O(N^2)
  */
 
 public class NumberOfUniqueBST {

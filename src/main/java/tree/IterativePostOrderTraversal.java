@@ -7,6 +7,9 @@ import java.util.Stack;
 
 /**
  * Created by sarvothampai on 15/10/15.
+ *
+ * Time Complexity : O(N)
+ *
  */
 public class IterativePostOrderTraversal {
 

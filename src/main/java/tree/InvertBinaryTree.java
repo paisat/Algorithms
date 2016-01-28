@@ -20,6 +20,8 @@ package tree;
  / \   / \
  9   6 3   1
 
+ Time Complexity : O(N)
+
  */
 public class InvertBinaryTree {
 

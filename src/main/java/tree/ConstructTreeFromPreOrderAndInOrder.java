@@ -8,7 +8,7 @@ import java.util.Queue;
 /**
  * Created by sarvothampai on 07/10/15.
  * <p/>
- * O(n^2)
+ * Time Complexity :  O(N^2)
  */
 public class ConstructTreeFromPreOrderAndInOrder {
 

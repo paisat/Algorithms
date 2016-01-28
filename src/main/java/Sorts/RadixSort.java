@@ -6,8 +6,8 @@ import java.util.Arrays;
  * Created by sarvothampai on 06/01/16.
  *
  *
- * O((n+b)*log to the  base b K)
- * K is the max value for b bits
+ * O(n log n) = O(nk) where k is the number of bits in each element.
+ *
  *
  */
 

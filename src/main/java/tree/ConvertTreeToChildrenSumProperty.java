@@ -11,7 +11,7 @@ package tree;
  * <p/>
  * Time Complexity is O(N^2)
  */
-public class ConvertATreeToSumTree {
+public class ConvertTreeToChildrenSumProperty {
 
 
     public void convertTreeToSumTree(TreeNode root) {

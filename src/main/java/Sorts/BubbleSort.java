@@ -6,6 +6,7 @@ package Sorts;
  *
  * Worst case : O(N^2)
  * Best case : O(N).  When array is already sorted;
+ * Average Case : O(N^2)
  *
  *
  */

@@ -2,12 +2,13 @@ package tree;
 
 /**
  * Created by sarvothampai on 16/12/15.
- *
+ * <p>
  * Given a binary tree, write a function that returns true if the tree satisfies below property.
-
- For every node, data value must be equal to sum of data values in left and right children.
- Consider data value as 0 for NULL children. Below tree is an example
- *
+ * <p>
+ * For every node, data value must be equal to sum of data values in left and right children.
+ * Consider data value as 0 for NULL children. Below tree is an example
+ * <p>
+ * Time Complexity : O(N)
  */
 public class ChildrenSumPropertyInBinaryTree {
 

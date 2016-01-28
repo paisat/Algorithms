@@ -81,6 +81,13 @@ public class MaxWidthOfABinaryTree {
 
     }
 
+
+    /**
+     *
+     * Time Complerxity : O(N)
+     *
+     * */
+
     private void maxWidthHelper(TreeNode root, int nodesPerLevel[], int level) {
 
         if (root != null) {
@@ -92,6 +99,13 @@ public class MaxWidthOfABinaryTree {
 
     }
 
+
+    /**
+     *
+     *
+     * Time Complexity : O(N^2)
+     *
+     * */
     int getMaxWidth(TreeNode TreeNode) {
         int maxWidth = 0;
         int width;

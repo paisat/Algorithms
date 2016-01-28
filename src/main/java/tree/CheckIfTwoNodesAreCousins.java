@@ -2,6 +2,10 @@ package tree;
 
 /**
  * Created by sarvothampai on 08/01/16.
+ *
+ *
+ * Time Complexity : O(N)
+ *
  */
 public class CheckIfTwoNodesAreCousins {
 
@@ -65,7 +69,7 @@ public class CheckIfTwoNodesAreCousins {
             //1. The two Nodes should be on the same level in the binary tree.
             //2. The two Nodes should not be siblings (means that they should
             // not have the same parent Node).
-            if ((level(node, a, 1) == level(node, b, 1)) && (isSibling(node, node, a, b))) {
+            if ((level(node, a, 1) == level(node, b, 1)) && (!isSibling(node, node, a, b))) {
                 return 1;
             } else {
                 return 0;

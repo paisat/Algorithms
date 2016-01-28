@@ -4,6 +4,12 @@ package tree;
  * Created by sarvothampai on 08/01/16.
  * <p/>
  * <p/>
+ *
+ * Write a function to detect if two trees are isomorphic. Two trees are called isomorphic if one of them can be obtained from other by a series of flips, i.e. by swapping left and right children of a number of nodes.
+ * Any number of nodes at any level can have their children swapped. Two empty trees are isomorphic.
+
+ For example, following two trees are isomorphic with following sub-trees flipped: 2 and 3, NULL and 6, 7 and 8.
+ *
  * Time COmplexity : O(M+N)
  */
 public class TreeIsoMorphismProblem {
