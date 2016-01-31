@@ -1,5 +1,6 @@
 package Strings;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +31,8 @@ public class MinimumWindowSubstring {
 
         MinimumWindowSubstring obj = new MinimumWindowSubstring();
         System.out.println(obj.minWindow("cabwefgewcwaefgcf", "cae"));
+        System.out.println(obj.minWindow2("a","a"));
+
     }
 
     public String minWindow(String s, String t) {
@@ -108,6 +111,84 @@ public class MinimumWindowSubstring {
 
 
         return result;
+
+    }
+
+
+    /**
+     *
+     *
+     * Using array instead of map.
+     * Time Complexity : O(N)
+     *
+     * */
+    public String minWindow2(String s , String t){
+
+
+        if(s!=null && s.length()!=0 && t!=null && t.length()!=0){
+
+            int needToFind[] =new int[256];
+            int hasFound[] =new int[256];
+
+
+            for(int i=0;i<t.length();i++){
+                char ch=t.charAt(i);
+                needToFind[ch]++;
+            }
+
+            int count=0; int begin=0; int start=0; int end=0; int minLength=Integer.MAX_VALUE;
+
+            for(int j=0;j<s.length();j++){
+
+                char ch=s.charAt(j);
+
+                if(needToFind[ch]==0){
+                    continue;
+                }
+
+                hasFound[ch]++;
+
+                if(hasFound[ch]<=needToFind[ch]){
+                    count++;
+                }
+
+                if(count==t.length()){
+
+                    while ( begin<s.length() && needToFind[s.charAt(begin)]==0 || hasFound[s.charAt(begin)] > needToFind[s.charAt(begin)] ){
+
+
+                        if(needToFind[s.charAt(begin)]!=0 && hasFound[s.charAt(begin)]>needToFind[s.charAt(begin)]){
+
+                            hasFound[s.charAt(begin)]--;
+                        }
+
+                        begin++;
+
+                    }
+
+                    if(j-begin+1 < minLength){
+
+                        minLength=j-begin+1;
+                        start=begin;
+                        end=j;
+                    }
+
+
+
+                }
+
+
+            }
+
+            if(minLength!=Integer.MAX_VALUE) {
+
+                return s.substring(start, end + 1);
+            }
+
+
+        }
+
+        return "";
 
     }
 

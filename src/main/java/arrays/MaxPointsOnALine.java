@@ -3,20 +3,16 @@ package arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-///
-//  Created by sarvothampai on 17/01/16.
-
-
-
-// /
 
 
 /**
  *
+ * Find Collinear points
  *
  * GCD O(Log min(a,b))
- *
- * */
+ * <p>
+ * Time Complexity : O(N^2)
+ */
 public class MaxPointsOnALine {
 
 

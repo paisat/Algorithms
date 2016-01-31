@@ -42,6 +42,38 @@ public class NestedIntegerDepthSum {
 
     }
 
+    private int getDepth(List<NestedInteger> input) {
+        if (input == null || input.size() == 0) {
+            return 0;
+        }
+
+        int depth = 0;
+        for (int i = 0; i < input.size(); i++) {
+            if (!input.get(i).isInteger()) {
+                depth = Math.max(depth, getDepth(input.get(i).getList()));
+            }
+        }
+
+        return depth + 1;
+    }
+
+    private int depthSumHelper2(List<NestedInteger> input, int level) {
+        if (input == null || input.size() == 0) {
+            return 0;
+        }
+
+        int sum = 0;
+        for (int i = 0; i < input.size(); i++) {
+            if (input.get(i).isInteger()) {
+                sum += input.get(i).getInteger() * level;
+            } else {
+                sum += depthSumHelper2(input.get(i).getList(), level - 1);
+            }
+        }
+
+        return sum;
+    }
+
 
     public int depthSum(List<NestedInteger> input) {
 

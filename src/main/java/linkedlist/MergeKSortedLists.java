@@ -5,10 +5,11 @@ import java.util.PriorityQueue;
 
 /**
  * Created by sarvothampai on 23/10/15.
- *
- *
+ * <p>
+ * <p>
  * Time Complexity : O(N log k)
- *
+ * <p>
+ * N is the total number of elements in all lists.
  */
 public class MergeKSortedLists {
 

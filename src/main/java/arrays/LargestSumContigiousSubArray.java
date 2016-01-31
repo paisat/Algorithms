@@ -39,6 +39,7 @@ public class LargestSumContigiousSubArray {
      *
      *  Complexity :  n(Log n)
      *
+     * T(n) = 2T(N/2) + O(N)
      *
      * */
     int maxCrossingSum(int arr[], int l, int m, int h) {

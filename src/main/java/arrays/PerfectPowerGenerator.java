@@ -51,8 +51,6 @@ public class PerfectPowerGenerator {
     }
 
 
-
-
     public Long next() {
         long pre = next;
         next = next*base;

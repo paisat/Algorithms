@@ -7,6 +7,8 @@ package Strings;
  * Time Complexity O(M+N)
  *
  *
+ * Example :
+ *
  * abcdabxabcdabcdabcy
  *
  * abcdabcy

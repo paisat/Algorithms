@@ -4,6 +4,13 @@ import linkedlist.ListNode;
 
 /**
  * Created by sarvothampai on 17/01/16.
+ * <p>
+ * Time Complexity :
+ * <p>
+ * Push : O(1)
+ * Pop : O(1)
+ * getMiddle : O(1)
+ *
  */
 
 public class MidStack {
@@ -48,8 +55,12 @@ public class MidStack {
         return ret;
     }
 
-    public int findMiddle() {
-        return middle.getVal();
+    public Integer findMiddle() {
+        if (middle != null) {
+            return middle.getVal();
+        }
+
+        return null;
     }
 
 

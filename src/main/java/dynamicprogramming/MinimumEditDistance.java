@@ -76,7 +76,6 @@ public class MinimumEditDistance {
             } else {
                 throw new IllegalArgumentException("Some wrong with given data");
             }
-
         }
     }
 

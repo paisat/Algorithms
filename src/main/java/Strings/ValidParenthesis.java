@@ -8,7 +8,17 @@ import java.util.Stack;
  * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
  * <p/>
  * The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
+ * <p>
+ * <p>
+ * Time Complexity :
  */
+
+
+/**
+ *
+ * Time Complexity : O(N)
+ *
+ * */
 public class ValidParenthesis {
 
     public boolean isValid(String s) {
@@ -80,5 +90,25 @@ public class ValidParenthesis {
             }
         }
         return count == 0;
+    }
+
+
+    /**
+     * Just replace all parenthesis.
+     * The Final string should be of length zero
+     * <p>
+     * Not so efficient
+     * <p>
+     * Might go upto O(N^2);
+     */
+    public boolean isValid2(String s) {
+        int length;
+
+        do {
+            length = s.length();
+            s = s.replace("()", "").replace("{}", "").replace("[]", "");
+        } while (length != s.length());
+
+        return s.length() == 0;
     }
 }

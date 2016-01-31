@@ -1,5 +1,6 @@
 package Strings;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +32,10 @@ import java.util.Map;
 
 public class IsomorphicStrings {
 
+
+    /**
+     * Time Complexity O(N^2)
+     */
     public boolean isIsomorphic(String s, String t) {
 
 
@@ -64,4 +69,45 @@ public class IsomorphicStrings {
         return true;
 
     }
+
+
+    /**
+     * Time Complexity : O(N)
+     * <p>
+     * Cant handle unicode characters
+     * Assumes character are ascii.
+     */
+    public boolean isIsomorphic2(String s, String t) {
+
+
+        if (s == null || t == null || s.length() != t.length()) {
+            return false;
+        }
+
+        int m1[] = new int[256];
+        int m2[] = new int[256];
+
+        Arrays.fill(m1, -1);
+        Arrays.fill(m2, -1);
+
+        for (int i = 0; i < s.length(); i++) {
+
+            char ch1 = s.charAt(i);
+            char ch2 = t.charAt(i);
+
+            if (m1[ch1] != m2[ch2]) {
+                return false;
+            }
+
+            m1[ch1] = i;
+            m2[ch2] = i;
+
+
+        }
+
+        return true;
+
+
+    }
+
 }

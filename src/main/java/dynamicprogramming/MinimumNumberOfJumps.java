@@ -2,6 +2,10 @@ package dynamicprogramming;
 
 /**
  * Created by sarvothampai on 09/01/16.
+ *
+ *
+ * Time Complexity : O(N^2)
+ *
  */
 public class MinimumNumberOfJumps {
 

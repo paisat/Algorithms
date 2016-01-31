@@ -7,6 +7,9 @@ import java.util.PriorityQueue;
 
 /**
  * Created by sarvothampai on 13/01/16.
+ *
+ * Time Complexity : O(n) + O(n-k  * Log k )
+ *
  */
 public class PointsOnaPlane {
 

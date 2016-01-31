@@ -13,28 +13,37 @@ public class CircularQueue {
 
     public CircularQueue(int s) {
         size = s;
-        q = new int[s + 1];
-        head = 0;
-        tail = 0;
+        q = new int[s];
+        head = -1;
+        tail = -1;
     }
 
-    public synchronized void initialize() {
-        head = 0;
-        tail = 0;
-    }
+
 
     public synchronized boolean enqueue(int v) {
-        int tmp = (tail + 1) % size;
-        if (tmp == head) return false;
-        q[tail] = v;
-        tail = tmp;
+        int pos = (tail + 1) % size;
+        if (pos == head) return false;
+        if (head == -1) {
+            head = 0;
+        }
+        q[pos] = v;
+        tail = pos;
         return true;
     }
 
     public synchronized int dequeue() throws Exception {
-        if (head == tail) throw new Exception("queue underflow!");
+        if (head == -1 || tail == -1) throw new Exception("queue underflow!");
+
         int tmp = q[head];
-        head = (head + 1) % size;
+
+        if(head==tail){
+            head=-1;
+            tail=-1;
+        }
+        else {
+
+            head = (head + 1) % size;
+        }
         return tmp;
     }
 }

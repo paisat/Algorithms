@@ -29,6 +29,8 @@ public class FindRange {
         System.out.println(obj.findRange(Arrays.asList(new Interval(1, 3), new Interval(4, 5), new Interval(7, 10))));
         System.out.println(obj.findRange(Arrays.asList(new Interval(3, 6), new Interval(8, 9), new Interval(1, 5))));
 
+        Long l = 1000000007L;
+
     }
 
 

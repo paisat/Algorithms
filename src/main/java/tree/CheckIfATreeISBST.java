@@ -2,6 +2,10 @@ package tree;
 
 /**
  * Created by sarvothampai on 08/10/15.
+ *
+ *
+ * Time Complexity : O(N)
+ *
  */
 public class CheckIfATreeISBST {
 

@@ -2,6 +2,9 @@ package arrays;
 
 /**
  * Created by sarvothampai on 19/09/15.
+ * <p>
+ * <p>
+ * Time Complexity : O(Log n)
  */
 public class MedianOfTwoSortedArrays {
 
@@ -48,12 +51,11 @@ public class MedianOfTwoSortedArrays {
 //    }
 
 
-    int median(int arr[], int n)
-    {
-        if (n%2 == 0)
-            return (arr[n/2] + arr[n/2-1])/2;
+    int median(int arr[], int n) {
+        if (n % 2 == 0)
+            return (arr[n / 2] + arr[n / 2 - 1]) / 2;
         else
-            return arr[n/2];
+            return arr[n / 2];
     }
 
 

@@ -5,6 +5,10 @@ package dynamicprogramming;
  * <p/>
  * <p/>
  * Time Complexity : O(n Log n)
+ *
+ *
+ * Table Stores minimum of the last value of an increasing sub sequence of a particular length.
+ *
  */
 
 //todo complete this

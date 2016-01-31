@@ -30,6 +30,7 @@ import java.util.List;
  * ]
  *
  *
+ *
  * n+r-1 C r
  *
  * Time Complexity : O(N!)
@@ -67,7 +68,6 @@ public class FactorCombinations {
             }
         } else {
             for (int i = start; i <= n; i++) {
-
                 if (n % i == 0) {
                     factors.add(i);
                     factorsHelper(n / i, result, factors, i);
