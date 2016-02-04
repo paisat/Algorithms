@@ -47,7 +47,7 @@ public class FindAllTriangleSides {
         List<List<Integer>> triangleSides = new ArrayList<List<Integer>>();
 
 
-        if (arr != null && arr.length != 0) {
+        if (arr != null && arr.length >= 3) {
 
             int k = 0;
 

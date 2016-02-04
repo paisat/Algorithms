@@ -6,6 +6,17 @@ import java.util.List;
 
 /**
  * Created by sarvothampai on 18/01/16.
+ *
+ * Consider the following: let dpX[i][j][k][l] stand for the number of such sequences that ends with X, X is 1,2,3 or 4 with i ones, j twos, k threes, l fours.
+ * Then you'll have the formula for dp1:
+
+ dp1[i][j][k][l] = dp2[i-1][j][k][l] + dp3[i-1][j][k][l] + dp4[i-1][j][k][l]
+ And the analogous for dp2, dp3 and dp4. The answer will be the dp1[n1][n2][n3][n4] +
+ dp2[n1][n2][n3][n4] + dp3[n1][n2][n3][n4] + dp4[n1][n2][n3][n4].
+
+ O(n1*n2*n3*n4)
+
+ *
  */
 public class ConsecutiveNumberSeries {
 

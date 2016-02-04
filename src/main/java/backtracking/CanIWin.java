@@ -22,7 +22,7 @@ public class CanIWin {
     }
 
     private boolean canIWinHelper(List<Integer> pool, int desiredTotal) {
-        if (pool.get(pool.size() - 1) >= desiredTotal) {
+        if (pool.get(pool.size() - 1) >=  desiredTotal) {
             return true;
         }
 

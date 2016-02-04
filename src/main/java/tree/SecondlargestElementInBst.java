@@ -19,7 +19,7 @@ public class SecondlargestElementInBst {
         TreeNode root1 = new TreeNode(137);
 
 
-        TreeNode result = obj.getSecondLargest(root1);
+        TreeNode result = obj.getSecondLargest(root);
 
 
         if (result != null) {

@@ -2,10 +2,9 @@ package tree;
 
 /**
  * Created by sarvothampai on 08/10/15.
- *
- *
+ * <p>
+ * <p>
  * Time Complexity : O(N)
- *
  */
 public class CheckIfATreeISBST {
 
@@ -43,7 +42,7 @@ public class CheckIfATreeISBST {
 
         boolean result = true;
 
-        if (result ) {
+        if (result) {
             result = checkBST(root.left);
         }
 
@@ -60,7 +59,7 @@ public class CheckIfATreeISBST {
         }
 
 
-        if (result ) {
+        if (result) {
             result = checkBST(root.right);
         }
 
