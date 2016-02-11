@@ -1,6 +1,9 @@
 package arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import linkedlist.ListNode;
 
 /**
  * Created by sarvothampai on 14/01/16.
@@ -13,6 +16,8 @@ class PythagoreanTriplets {
     // A[i]*A[i] = A[j]*A[j] + A[k]*[k]
     // Note that this function modifies given array
     static boolean isTriplet(int arr[], int n) {
+
+
         // Square array elements
         for (int i = 0; i < n; i++)
             arr[i] = arr[i] * arr[i];

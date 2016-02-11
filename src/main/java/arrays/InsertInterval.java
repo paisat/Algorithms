@@ -20,6 +20,10 @@ import java.util.List;
  * This is because the new interval [4,9] overlaps with [3,5],[6,7],[8,10].
  * <p/>
  * Time Complexity : O(N)
+ *
+ *
+ * Intervals has to be sorted for this to work
+ *
  */
 public class InsertInterval {
 

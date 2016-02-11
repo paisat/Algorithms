@@ -39,8 +39,8 @@ public class DivideTwoIntegers {
 
         DivideTwoIntegers obj = new DivideTwoIntegers();
 
-        System.out.println(obj.divide(-2147483648
-                , -1));
+        System.out.println(obj.divide(10004
+                , 10));
 
 
     }
@@ -59,19 +59,26 @@ public class DivideTwoIntegers {
         long divi = Math.abs((long) divisor);
 
 
+        int iterations=0;
+
             while ((divid >= divi)) {
 
+                iterations++;
                 int shifts = 0;
                 long tempDivisor = divi;
 
                 while (divid >= (tempDivisor << 1)) {
                     tempDivisor = tempDivisor << 1;
                     shifts++;
+                    iterations++;
                 }
 
                 result = result + (1 << shifts);
                 divid = divid - tempDivisor;
+
             }
+
+        System.out.println(iterations);
 
 
         return (!positive) ? -result : result;

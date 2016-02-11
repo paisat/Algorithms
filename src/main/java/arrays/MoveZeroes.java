@@ -47,4 +47,42 @@ public class MoveZeroes{
         }
 
     }
+
+
+    /**
+     *
+     * Note this method doesnt maintain order of elements.
+     *
+     *
+     *
+     * */
+
+    public void moveZeroes2(int[] nums) {
+
+
+        if(nums!=null && nums.length!=0){
+
+            int low=0;
+            int high=nums.length-1;
+
+            while(low<high){
+
+                while(low<high  && nums[low]!=0){
+                    low++;
+                }
+
+                while(low<high && nums[high]==0){
+                    high--;
+                }
+
+                if(low<high){
+
+                    int temp=nums[low];
+                    nums[low]=nums[high];
+                    nums[high]=temp;
+                }
+            }
+        }
+
+    }
 }

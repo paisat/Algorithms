@@ -109,9 +109,7 @@ public class SumTree {
                 rs = 2 * root.right.val;
             }
 
-            if (root.val == ls + rs) {
-                return true;
-            }
+           return root.val == ls + rs;
 
         }
 

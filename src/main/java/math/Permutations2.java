@@ -89,15 +89,15 @@ public class Permutations2 {
 
     }
 
-    public void permutationHelper2(List<Integer> nums, int pos, List<List<Integer>> result) {
+    public void permutationHelper2(int nums[], int pos, List<List<int[]>> result) {
 
-        if (pos == nums.size()) {
-            result.add(new ArrayList<Integer>(nums));
+        if (pos == nums.length) {
+            result.add(Arrays.asList(nums));
         } else {
 
-            for (int i = pos; i < nums.size(); i++) {
+            for (int i = pos; i < nums.length; i++) {
 
-                if (i != pos && nums.get(i) == nums.get(pos)) {
+                if (i != pos && nums[i] == nums[pos]) {
                     continue;
                 }
 
@@ -110,10 +110,10 @@ public class Permutations2 {
 
     }
 
-    private void swap(List<Integer> nums, int pos1, int pos2) {
-        int temp = nums.get(pos1);
-        nums.set(pos1, nums.get(pos2));
-        nums.set(pos2, temp);
+    private void swap(int nums[], int pos1, int pos2) {
+        int temp = nums[pos1];
+        nums[pos1]= nums[pos2];
+        nums[pos2]= temp;
     }
 
 }

@@ -10,72 +10,103 @@ import linkedlist.ListNode;
  * Push : O(1)
  * Pop : O(1)
  * getMiddle : O(1)
- *
  */
 
 public class MidStack {
 
-    ListNode head;
-    ListNode middle;
-    int size = 0;
+    public static void main(String[] args) {
 
-    public void push(int val) {
-        size++;
+        MidStack midStack = new MidStack();
+
+        System.out.println(midStack.pop());
+        System.out.println(midStack.getMid());
+        midStack.add(2);
+        midStack.printStack();
+        System.out.println(midStack.getMid());
+        midStack.add(3);
+        midStack.printStack();
+        System.out.println(midStack.getMid());
+        midStack.add(4);
+        midStack.printStack();
+        System.out.println(midStack.getMid());
+        System.out.println(midStack.pop());
+        System.out.println(midStack.getMid());
+
+
+    }
+
+
+    private ListNode head;
+    private ListNode mid;
+    private int size;
+
+    public MidStack() {
+        head = null;
+        mid = null;
+        size = 0;
+    }
+
+    public void add(int val) {
+
         if (head == null) {
             head = new ListNode(val);
-            middle = head;
-        } else {
-            ListNode node = new ListNode(val);
-            node.setNext(head);
-            head.setPrev(node);
-            head = node;
-            if (size % 2 == 0) {
-                middle = middle.getPrev();
-            }
+            size = 1;
+            mid = head;
+            return;
         }
+
+        size = size + 1;
+
+        ListNode element = new ListNode(val);
+        element.setNext(head);
+        head.setPrev(element);
+        head = element;
+
+        if (size % 2 == 0 && mid != null) {
+            mid = mid.getPrev();
+        }
+
     }
 
-    public int pop() {
+    public Integer pop() {
+
         if (head == null) {
-            return -1;
+            return null;
         }
+
         size--;
-        int ret;
-        ret = head.getVal();
-        if (size == 0) {
-            head = null;
-            middle = null;
-        } else {
-            head = head.getNext();
-            head.setPrev(null);
-            if (size % 2 == 1) {
-                middle = middle.getNext();
-            }
+
+
+        if (size % 2 == 1) {
+            mid = mid.getNext();
         }
-        return ret;
+
+        int element = head.getVal();
+
+        head = head.getNext();
+
+        return element;
+
+
     }
 
-    public Integer findMiddle() {
-        if (middle != null) {
-            return middle.getVal();
+    public Integer getMid() {
+        if (mid != null) {
+            return mid.getVal();
         }
 
         return null;
     }
 
+    public void printStack() {
 
-    public void deleteMiddle() {
-        size--;
-        if (middle.getPrev() != null) {
-            middle.getPrev().setNext(middle.getNext());
+        ListNode cur = head;
+        while (cur != null) {
+            System.out.print(cur.getVal() + " ");
+            cur = cur.getNext();
         }
-        if (middle.getNext() != null) {
-            middle.getNext().setPrev(middle.getPrev());
-        }
-        if (size % 2 == 1) {
-            middle = middle.getNext();
-        } else {
-            middle = middle.getPrev();
-        }
+
+        System.out.println();
+
     }
 }

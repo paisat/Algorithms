@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 /**
  * Created by sarvothampai on 16/09/15.
+ *
+ * Time Complexity : O(Length of the longest linked list)
+ *
  */
 public class AddTwoLinkedLists {
 
@@ -108,5 +111,7 @@ public class AddTwoLinkedLists {
 
         return head1;
     }
+
+
 
 }

@@ -13,8 +13,9 @@ import java.util.List;
  * Note that 1 is typically treated as an ugly number.
  * <p/>
  * Time Complexity : O(N)
- *
- *
+ * Space Complexity : O(N)
+ * <p>
+ * Space Complexity cannot be reduced further
  */
 public class NThUglyNumber {
 

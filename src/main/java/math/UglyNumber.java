@@ -4,6 +4,7 @@ package math;
  * Created by sarvothampai on 20/12/15.
  *
  *
+ * Ugly number is one which has 2,3,5 as the only factors
  */
 public class UglyNumber {
 

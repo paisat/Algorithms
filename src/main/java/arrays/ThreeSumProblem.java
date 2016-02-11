@@ -10,7 +10,7 @@ import java.util.List;
  * <p/>
  * Dont forget to Sort.
  *
- * O(N2)
+ * O(N^2)
  *
  * Need not be contigious.
  */

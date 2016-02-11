@@ -10,9 +10,16 @@ package math;
  * Credits:
  * Special thanks to @ts for adding this problem and creating all test cases.
  * <p/>
- * Time Complexity : Log(n)
+ * Time Complexity : Log to the base 5 (n)
  */
 public class CountTrailingFactorialZeroes {
+
+    public static void main(String []args){
+
+        CountTrailingFactorialZeroes obj=new CountTrailingFactorialZeroes();
+        System.out.println(obj.trailingZeroes(28));
+
+    }
 
     public int trailingZeroes(int n) {
         if (n < 0)

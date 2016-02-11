@@ -50,8 +50,9 @@ public class ThreeSumSmaller {
                     int sum = nums[i] + nums[l] + nums[r];
 
                     if (sum < target) {
+                        result += (r - l);
                         l++;
-                        result += (r - l) + 1;
+
                     } else {
                         r--;
                     }

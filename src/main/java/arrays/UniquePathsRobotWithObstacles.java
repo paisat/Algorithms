@@ -53,14 +53,9 @@ public class UniquePathsRobotWithObstacles {
 
 
             for (int i = 1; i < row; i++) {
-
                 for (int j = 1; j < col; j++) {
-
                     if (obstacleGrid[i][j] != 1) {
-                        int a = (dp[i][j - 1] != 0) ? dp[i][j - 1] : 0;
-                        int b = (dp[i - 1][j] != 0) ? dp[i - 1][j] : 0;
-
-                        dp[i][j] = a + b;
+                        dp[i][j] =dp[i][j-1]+dp[i-1][j];
                     }
                 }
             }

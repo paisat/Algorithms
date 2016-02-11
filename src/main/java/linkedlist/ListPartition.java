@@ -2,6 +2,8 @@ package linkedlist;
 
 /**
  * Created by sarvothampai on 25/10/15.
+ *
+ * Time Complexity : O(N)
  */
 public class ListPartition {
 
@@ -45,8 +47,7 @@ public class ListPartition {
 
                 p2.next = p;
                 prev.next = p.next;
-
-                p = prev.next;
+                p = p.next;
                 p2 = p2.next;
             }
         }
@@ -55,6 +56,7 @@ public class ListPartition {
         p2.next = null;
 
         System.out.println(p2.val);
+        System.out.println(prev.val);
 
         prev.next = fakeHead2.next;
 

@@ -3,7 +3,7 @@ package matrix;
 /**
  * Created by sarvothampai on 16/10/15.
  * <p/>
- * Complexity is O(N)
+ * Time  Complexity is O(M+N)
  */
 public class SearchInA2DSortedMatrix {
 
@@ -34,7 +34,6 @@ public class SearchInA2DSortedMatrix {
         }
 
         return false;
-
 
     }
 }

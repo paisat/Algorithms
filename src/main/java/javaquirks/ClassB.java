@@ -9,7 +9,6 @@ public class ClassB extends ClassA {
 
 
     public ClassB(int i){
-
         System.out.println("child");
     }
 

@@ -22,13 +22,20 @@ import java.util.List;
  */
 public class GrayCode {
 
-    public static void main(String []args){
+    public static void main(String[] args) {
 
-        GrayCode obj=new GrayCode();
-        System.out.println(obj.grayCode(1));
+        GrayCode obj = new GrayCode();
+        System.out.println(obj.grayCode(5));
+
+        System.out.println(obj.grayCodes2(3));
 
     }
 
+
+    /**
+     *
+     * Time complexity : O(2^N)
+     * */
     public List<Integer> grayCode(int n) {
 
         List<Integer> result = new ArrayList<Integer>();
@@ -37,18 +44,59 @@ public class GrayCode {
 
             result.add(0);
 
+            int iterations=0;
+
             for (int i = 1; i <= n; i++) {
+                iterations++;
                 int front = 1 << (i - 1);
                 int size = result.size();
                 for (int j = size - 1; j >= 0; j--) {
+                    iterations++;
                     result.add(result.get(j) + front);
                 }
             }
+
+            System.out.println(iterations);
 
         }
 
         return result;
 
 
+    }
+
+
+    public List<String> grayCodes2(int n) {
+
+        List<String> grayCodes = new ArrayList<String>();
+
+        if (n > 0) {
+
+            grayCodes.add("0");
+            grayCodes.add("1");
+
+            for (int i = 2; i < (1 << n); i = i << 1) {
+
+                for (int j = i - 1; j >= 0; j--) {
+                    grayCodes.add(grayCodes.get(j));
+                }
+
+                int j = 0;
+                for (j = 0; j < i; j++) {
+                    StringBuilder sb = new StringBuilder(grayCodes.get(j));
+                    sb.insert(0, "0");
+                    grayCodes.set(j, sb.toString());
+                }
+
+                for (; j < 2 * i; j++) {
+
+                    StringBuilder sb = new StringBuilder(grayCodes.get(j));
+                    sb.insert(0, "1");
+                    grayCodes.set(j, sb.toString());
+
+                }
+            }
+        }
+        return grayCodes;
     }
 }

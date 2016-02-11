@@ -27,7 +27,6 @@ public class URLShotener {
         while (id != 0) {
 
             shortUrl.insert(0, map[id % 62]);
-
             id = id / 62;
         }
 

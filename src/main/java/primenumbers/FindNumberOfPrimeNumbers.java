@@ -7,7 +7,7 @@ package primenumbers;
  * O(n * root n)
  * <p/>
  * <p/>
- * O(n(log n)(log log n))
+ * Time Complexity : n log ( log n )
  */
 
 
@@ -31,7 +31,7 @@ public class FindNumberOfPrimeNumbers {
 
             boolean[] marked = new boolean[n + 1];
 
-            for (int i = 2; i < n; i++) {
+            for (int i = 2; i <= n; i++) {
 
                 if (!marked[i]) {
                     count++;

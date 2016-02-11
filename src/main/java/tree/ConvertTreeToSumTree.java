@@ -6,6 +6,24 @@ package tree;
  *
  * Time Complexity : O(N)
  *
+ *
+ * For example, the following tree
+
+ 10
+ /      \
+ -2        6
+ /   \      /  \
+ 8     -4    7    5
+ should be changed to
+
+ 20(4-2+12+6)
+ /      \
+ 4(8-4)      12(7+5)
+ /   \      /  \
+ 0      0    0    0
+
+ *
+ *
  */
 public class ConvertTreeToSumTree {
 

@@ -2,6 +2,10 @@ package linkedlist;
 
 /**
  * Created by sarvothampai on 25/10/15.
+ *
+ *
+ * Time Complexity : O(N)
+ *
  */
 public class DeleteAlternateNodeInALinkedList {
 
@@ -17,6 +21,8 @@ public class DeleteAlternateNodeInALinkedList {
         head.next.next.next.next = new ListNode(5);
 
         ListNode newHead = obj.deleteAlternateNodesInALinkedList(head);
+
+        newHead = obj.deleteAlternateNodesIteratively(head);
 
         while (newHead != null) {
             System.out.print(newHead.val + " ");
@@ -34,6 +40,24 @@ public class DeleteAlternateNodeInALinkedList {
 
         head.next = deleteAlternateNodesInALinkedList(head.next.next);
         return head;
+    }
+
+    public ListNode deleteAlternateNodesIteratively(ListNode head) {
+
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode cur = head;
+
+        while (cur != null && cur.next != null) {
+            cur.next = cur.next.next;
+            cur = cur.next;
+        }
+
+        return head;
+
+
     }
 
 

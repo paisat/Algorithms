@@ -74,13 +74,15 @@ public class SlidingWindowMaximum {
                 result[index] = nums[queue.getFirst()];
                 index++;
 
+                while (!queue.isEmpty() && queue.getFirst() <= i - k) {
+                    queue.removeFirst();
+                }
+
                 while (!queue.isEmpty() && nums[queue.getLast()] <= nums[i]) {
                     queue.removeLast();
                 }
 
-                while (!queue.isEmpty() && queue.getFirst() <= i - k) {
-                    queue.removeFirst();
-                }
+
 
                 queue.addLast(i);
 

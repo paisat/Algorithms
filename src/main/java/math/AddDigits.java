@@ -13,6 +13,12 @@ package math;
  * Could you do it without any loop/recursion in O(1) runtime?
  * <p/>
  * Time Complexity : O(1)
+ *
+ *
+ * if a number is divisible by 9 then its sum of digits is 9. Except for zero
+ * or else sum is number % 9
+ *
+ *
  */
 public class AddDigits {
 

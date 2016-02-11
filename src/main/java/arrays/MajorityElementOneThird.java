@@ -9,6 +9,9 @@ import java.util.List;
  *  Dont add duplicate elements in result set;
  *  When list has only 2 elements add all . Dont add duplicate elements.
  *
+ *  Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.
+ *  The algorithm should run in linear time and in O(1) space.
+ *
  */
 
 

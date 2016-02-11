@@ -6,7 +6,9 @@ import java.util.List;
 /**
  * Created by sarvothampai on 06/10/15.
  *
- * Time Complexity : O(N)
+ * Time Complexity : O(N * j)
+ *
+ * j is max path length
  *
  */
 public class RootToLeafPathEqualToASum {

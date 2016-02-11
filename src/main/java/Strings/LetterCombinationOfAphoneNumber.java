@@ -15,12 +15,25 @@ import java.util.Map;
 
 
  Input:Digit string "23"
+ 6C2
+
+
  Output: ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
 
+ Time Complexity : O(3^N )
 
  *
  */
 public class LetterCombinationOfAphoneNumber {
+
+    private int iterations=0;
+
+    public static void main(String []args){
+
+        LetterCombinationOfAphoneNumber obj=new LetterCombinationOfAphoneNumber();
+        System.out.println(obj.letterCombinations("23459"));
+
+    }
 
     public List<String> letterCombinations(String digits) {
 
@@ -50,6 +63,8 @@ public class LetterCombinationOfAphoneNumber {
             combinationUtil(result, string, digits, map);
 
         }
+        System.out.println(iterations);
+        System.out.println(result.size());
         return result;
     }
 
@@ -73,6 +88,7 @@ public class LetterCombinationOfAphoneNumber {
 
         String letters = map.get(digits.substring(0, 1));
         for (int i = 0; i < letters.length(); i++) {
+            iterations++;
             string.add(letters.charAt(i));
             combinationUtil(result, string, digits.substring(1), map);
             string.remove(string.size() - 1);

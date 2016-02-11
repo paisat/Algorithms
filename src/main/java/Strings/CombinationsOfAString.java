@@ -13,8 +13,8 @@ public class CombinationsOfAString {
 
         CombinationsOfAString obj = new CombinationsOfAString();
 
-        System.out.println(obj.combinationsOfAString("1233", 2));
-        System.out.println(obj.combinationsOfAStringWithoutRepititions("121", 2));
+        System.out.println(obj.combinationsOfAString("123", 3));
+        //System.out.println(obj.combinationsOfAStringWithoutRepititions("121", 2));
 
 
     }

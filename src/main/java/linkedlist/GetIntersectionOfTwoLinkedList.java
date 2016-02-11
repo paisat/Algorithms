@@ -2,6 +2,9 @@ package linkedlist;
 
 /**
  * Created by sarvothampai on 16/10/15.
+ *
+ * Time Complexity  O(m+n)
+ *
  */
 public class GetIntersectionOfTwoLinkedList {
 

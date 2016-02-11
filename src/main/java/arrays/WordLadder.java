@@ -28,7 +28,7 @@ import java.util.Set;
  *
  * O(n log N) finding the next transformation in a sequence.
     O(N) transformations per sequence
-    O(26N/2) different sequences.
+    O(26 ^ N/2) different sequences.
 
  O(26 ^ N/2 N log N).
  *

@@ -43,6 +43,9 @@ package math;
  * <p/>
  * board[i][j] & 1
  * To get the next state, simply do
+ * <p>
+ *
+ * Time Complexity : O(Row * Col)
  */
 public class GameOfLife {
 

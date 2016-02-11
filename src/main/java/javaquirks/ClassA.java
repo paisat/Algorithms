@@ -5,6 +5,8 @@ package javaquirks;
  */
 public class ClassA {
 
+    private int a;
+
     public ClassA() {
         System.out.println("parent constructor");
     }

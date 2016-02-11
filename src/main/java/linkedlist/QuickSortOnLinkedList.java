@@ -1,180 +1,147 @@
 package linkedlist;
 
 /**
- * Created by sarvothampai on 25/10/15.
  *
  *
- * // C++ program for Quick Sort on Singly Linled List
- #include <iostream>
- #include <cstdio>
- using namespace std;
-
- /* a node of the singly linked list */
-/*struct node
-        {
-        int data;
-        struct node *next;
-        };
-
-/* A utility function to insert a node at the beginning of linked list
-        void push(struct node** head_ref, int new_data)
-        {
-     allocate node
-        struct node* new_node = new node;
-
-    /* put in the data
-        new_node->data  = new_data;
-
-    /* link the old list off the new node
-        new_node->next = (*head_ref);
-
-    /* move the head to point to the new node
-        (*head_ref)    = new_node;
-        }
-
-/* A utility function to print linked list
-        void printList(struct node *node)
-        {
-        while (node != NULL)
-        {
-        printf("%d  ", node->data);
-        node = node->next;
-        }
-        printf("\n");
-        }
-
-// Returns the last node of the list
-        struct node *getTail(struct node *cur)
-        {
-        while (cur != NULL && cur->next != NULL)
-        cur = cur->next;
-        return cur;
-        }
-
-// Partitions the list taking the last element as the pivot
-        struct node *partition(struct node *head, struct node *end,
-        struct node **newHead, struct node **newEnd)
-        {
-        struct node *pivot = end;
-        struct node *prev = NULL, *cur = head, *tail = pivot;
-
-        // During partition, both the head and end of the list might change
-        // which is updated in the newHead and newEnd variables
-        while (cur != pivot)
-        {
-        if (cur->data < pivot->data)
-        {
-        // First node that has a value less than the pivot - becomes
-        // the new head
-        if ((*newHead) == NULL)
-        (*newHead) = cur;
-
-        prev = cur;
-        cur = cur->next;
-        }
-        else // If cur node is greater than pivot
-        {
-        // Move cur node to next of tail, and change tail
-        if (prev)
-        prev->next = cur->next;
-        struct node *tmp = cur->next;
-        cur->next = NULL;
-        tail->next = cur;
-        tail = cur;
-        cur = tmp;
-        }
-        }
-
-        // If the pivot data is the smallest element in the current list,
-        // pivot becomes the head
-        if ((*newHead) == NULL)
-        (*newHead) = pivot;
-
-        // Update newEnd to the current last node
-        (*newEnd) = tail;
-
-        // Return the pivot node
-        return pivot;
-        }
-
-
-//here the sorting happens exclusive of the end node
-        struct node *quickSortRecur(struct node *head, struct node *end)
-        {
-        // base condition
-        if (!head || head == end)
-        return head;
-
-        node *newHead = NULL, *newEnd = NULL;
-
-        // Partition the list, newHead and newEnd will be updated
-        // by the partition function
-        struct node *pivot = partition(head, end, &newHead, &newEnd);
-
-        // If pivot is the smallest element - no need to recur for
-        // the left part.
-        if (newHead != pivot)
-        {
-        // Set the node before the pivot node as NULL
-        struct node *tmp = newHead;
-        while (tmp->next != pivot)
-        tmp = tmp->next;
-        tmp->next = NULL;
-
-        // Recur for the list before pivot
-        newHead = quickSortRecur(newHead, tmp);
-
-        // Change next of last node of the left half to pivot
-        tmp = getTail(newHead);
-        tmp->next =  pivot;
-        }
-
-        // Recur for the list after the pivot element
-        pivot->next = quickSortRecur(pivot->next, newEnd);
-
-        return newHead;
-        }
-
-// The main function for quick sort. This is a wrapper over recursive
-// function quickSortRecur()
-        void quickSort(struct node **headRef)
-        {
-        (*headRef) = quickSortRecur(*headRef, getTail(*headRef));
-        return;
-        }
-
-// Driver program to test above functions
-        int main()
-        {
-        struct node *a = NULL;
-        push(&a, 5);
-        push(&a, 20);
-        push(&a, 4);
-        push(&a, 3);
-        push(&a, 30);
-
-        cout << "Linked List before sorting \n";
-        printList(a);
-
-        quickSort(&a);
-
-        cout << "Linked List after sorting \n";
-        printList(a);
-
-        return 0;
-        }
+ * Quick sort on a linked list.
  *
- */
+ * Time Complexity : O(n log n)
+ *
+ * Worst Case : O(N^2)
+ *
+ * Worst case takes place when the array is already sorted.
+ *
+ * */
 
 public class QuickSortOnLinkedList {
 
-    ListNode head;
-    ListNode tail;
+
+    public static void main(String[] args) {
+        QuickSortOnLinkedList obj = new QuickSortOnLinkedList();
+
+        ListNode head = new ListNode(2);
+        head.next = new ListNode(1);
+
+        ListNode newHead = obj.sortLinkedList(head);
+
+        obj.printList(newHead);
+
+        ListNode head1 = new ListNode(2);
+        head1.next = new ListNode(2);
+        head1.next.next = new ListNode(2);
+
+        ListNode newHead1=obj.sortLinkedList(head1);
+
+        obj.printList(newHead1);
+
+        ListNode head2=new ListNode(4);
+        head2.next=new ListNode(2);
+        head2.next.next=new ListNode(7);
+        head2.next.next.next=new ListNode(5);
+
+        ListNode newHead2=obj.sortLinkedList(head2);
+        obj.printList(newHead2);
 
 
 
+    }
 
 
+    private void printList(ListNode head) {
+
+        ListNode cur = head;
+
+        while (cur != null) {
+            System.out.print(cur.val + " ");
+            cur = cur.next;
+        }
+
+        System.out.println();
+    }
+
+
+    public ListNode sortLinkedList(ListNode head) {
+
+        if (head == null || head.next == null) {
+            return head;
+        }
+
+        ListNode newHead = null;
+        ListNode p[] = new ListNode[1];
+        p[0] = null;
+        newHead = partition(head, p);
+
+        ListNode pivot = p[0];
+
+        if (newHead != pivot) {
+
+            ListNode cur = head;
+
+            while (cur != null && cur.next != pivot) {
+                cur = cur.next;
+            }
+
+            cur.next = null;
+
+            newHead = sortLinkedList(head);
+
+            cur = newHead;
+
+            while (cur != null && cur.next != null) {
+                cur = cur.next;
+            }
+
+            cur.next = pivot;
+
+        }
+
+        pivot.next = sortLinkedList(pivot.next);
+
+        return newHead;
+
+    }
+
+
+    private ListNode partition(ListNode head, ListNode[] pivotref) {
+
+        ListNode fakeHead1 = new ListNode(0);
+        ListNode fakeHead2 = new ListNode(0);
+        ListNode prev = fakeHead1;
+
+        fakeHead1.next = head;
+        ListNode p = head;
+        ListNode p1 = fakeHead1;
+        ListNode p2 = fakeHead2;
+
+        while (p.next != null) {
+            p = p.next;
+        }
+
+        int pivot = p.val;
+
+        p = head;
+
+        while (p != null) {
+
+            if (p.val <= pivot) {
+                p = p.next;
+                prev = prev.next;
+            } else {
+                p2.next = p;
+                prev.next = p.next;
+                p = prev.next;
+                p2 = p2.next;
+            }
+
+        }
+
+        p2.next = null;
+        prev.next = fakeHead2.next;
+
+        pivotref[0] = prev;
+
+        return fakeHead1.next;
+    }
 
 
 }
