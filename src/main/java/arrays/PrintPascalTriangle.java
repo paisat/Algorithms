@@ -20,6 +20,9 @@ import java.util.List;
  ]
 
  Time Complexity : O(n^2)
+
+ C(n,r)=(C(n,r-1)*(n-r+1))/r
+
  *
  */
 public class PrintPascalTriangle {

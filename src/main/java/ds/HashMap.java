@@ -24,7 +24,7 @@ package ds;
 public class HashMap<K, V> {
 
     private final int size = 100;
-    Entry<K, V> table[];
+    private Entry<K, V> table[];
 
 
     public HashMap() {

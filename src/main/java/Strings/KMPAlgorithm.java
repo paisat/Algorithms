@@ -91,8 +91,11 @@ public class KMPAlgorithm {
 
     public static void main(String args[]) {
 
-        String str = "abcxabcdabcdabcy";
-        String subString = "abcdabcy";
+//        String str = "abcxabcdabcdabcy";
+//        String subString = "abcdabcy";
+
+        String str="abcdabxabcdabcdabcy";
+        String subString="abcdabcy";
         KMPAlgorithm ss = new KMPAlgorithm();
         boolean result = ss.KMP(str.toCharArray(), subString.toCharArray());
         System.out.print(result);

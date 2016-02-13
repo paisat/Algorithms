@@ -2,6 +2,10 @@ package Strings;
 
 /**
  * Created by sarvothampai on 11/11/15.
+ * <p/>
+ * <p/>
+ * Given a string s1 and a string s2, write a snippet to say whether s2 is a rotation of s1 using only one call to strstr routine?
+ * (eg given s1 = ABCD and s2 = CDAB, return true, given s1 = ABCD, and s2 = ACBD , return false)
  */
 public class TwoStringsAreRotationsOfEachOtnerOrNot {
 

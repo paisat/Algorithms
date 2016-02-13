@@ -14,10 +14,10 @@ import java.util.Arrays;
  * <p/>
  * Assign prime numbers to each character . Find product of all characters . If products are same
  * then its an anagram
- *
+ * <p/>
  * Count number of characters in each word
  * both char counts should be same.
- *
+ * <p/>
  * <p/>
  * <p/>
  * <p/>
@@ -56,5 +56,26 @@ public class ValidAnagram {
 
         return s.equals(t);
 
+    }
+
+
+    /**
+     * Time Complexity : O(N)
+     * <p/>
+     * Space Complexity : O(1)
+     */
+    public boolean isAnagram2(String s, String t) {
+
+
+        if (s.length() != t.length()) return false;
+        int[] counter = new int[26];
+        for (int i = 0; i < s.length(); i++) {
+            counter[s.charAt(i) - 'a']++;
+            counter[t.charAt(i) - 'a']--;
+        }
+        for (int count : counter) {
+            if (count != 0) return false;
+        }
+        return true;
     }
 }
