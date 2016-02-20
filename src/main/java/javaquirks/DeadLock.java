@@ -20,8 +20,11 @@ public class DeadLock {
     public static void main(String []args) throws Exception{
 
         DeadLock obj=new DeadLock();
-        DeadLock.Thread1 t1 = obj.new Thread1();
-        DeadLock.Thread2 t2=obj.new Thread2();
+
+        Resource1 resource1=obj.new Resource1();
+        Resource2 resource2=obj.new Resource2();
+        DeadLock.Thread1 t1 = obj.new Thread1(resource1,resource2);
+        DeadLock.Thread2 t2=obj.new Thread2(resource1,resource2);
 
         Thread thread0=new Thread(t1);
         Thread thread1=new Thread(t2);
@@ -37,11 +40,18 @@ public class DeadLock {
 
     private class Thread1 implements Runnable{
 
+        private Resource1 resource1;
+        private Resource2 resource2;
+
+        public Thread1(Resource1 resource1,Resource2 resource2){
+            this.resource1=resource1;
+            this.resource2=resource2;
+        }
 
         public void run() {
 
             System.out.println("Thread 1:  Waiting for Resource 1");
-            synchronized (Resource1.class){
+            synchronized (resource1){
 
                 System.out.println("Thread 1: Got lock of resource 1");
 
@@ -54,7 +64,7 @@ public class DeadLock {
 
                 System.out.println("Thread 1: Waiting for Resource 2");
 
-                synchronized (Resource2.class){
+                synchronized (resource2){
                     System.out.println("Thread 1: Got lock of resource 2");
                 }
             }
@@ -64,10 +74,18 @@ public class DeadLock {
 
     private class Thread2 implements Runnable{
 
+        private Resource1 resource1;
+        private Resource2 resource2;
+
+        public Thread2(Resource1 resource1,Resource2 resource2){
+            this.resource1=resource1;
+            this.resource2=resource2;
+        }
+
         public void run() {
 
             System.out.println("Thread 2: Waiting for Resource 2");
-            synchronized (Resource2.class){
+            synchronized (resource2){
 
                 System.out.println("Thread 2: Got lock of resource 2");
 
@@ -78,7 +96,7 @@ public class DeadLock {
                 }
 
                 System.out.println("Thread 2: Waiting for Resource 1");
-                synchronized (Resource1.class){
+                synchronized (resource1){
                     System.out.println("Thread 2: Got lock of resource 1");
                 }
 

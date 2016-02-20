@@ -12,6 +12,7 @@ public class ReverseAString {
         ReverseAString obj = new ReverseAString();
 
         System.out.println(obj.reverseStringIteratively(input));
+        System.out.println(obj.reverseStringIteratively("abcd"));
         System.out.println(obj.reverseRecursively(new StringBuilder(input), 0));
 
     }

@@ -5,6 +5,7 @@ package javads;
  */
 public class FizzBuzz {
 
+
     public static void main(String[] args) {
         String buzz = "buzz", fizz = "fizz"; //initialise the string variables
         for (int i = 1; i <= 100; i++) {

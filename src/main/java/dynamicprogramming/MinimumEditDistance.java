@@ -30,6 +30,7 @@ public class MinimumEditDistance {
 
         for (int i = 0; i < temp[0].length; i++) {
             temp[0][i] = i;
+
         }
 
         for (int i = 0; i < temp.length; i++) {

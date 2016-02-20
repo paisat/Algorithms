@@ -10,7 +10,8 @@ import java.util.List;
  * <p/>
  * This sentence is false, it is an error in documentation.
  * <p/>
- * Thread acquires the intrinsic lock when it enters a synchronized method. Thread inside the synchronized method is set as the owner of the lock and is in RUNNABLE state. Any thread that attempts to enter the locked method becomes BLOCKED.
+ * Thread acquires the intrinsic lock when it enters a synchronized method. Thread inside the synchronized method is set as the owner of the lock and is in RUNNABLE state.
+ * Any thread that attempts to enter the locked method becomes BLOCKED.
  * <p/>
  * When thread calls wait it releases the current object lock (it keeps all locks from other objects) and than goes to WAITING state.
  * <p/>

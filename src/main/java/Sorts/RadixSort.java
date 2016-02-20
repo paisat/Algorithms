@@ -8,6 +8,8 @@ import java.util.Arrays;
  *
  * O(n log n) = O(nk) where k is the number of bits in each element.
  *
+ * Space Complexity O(n)
+ *
  *
  */
 

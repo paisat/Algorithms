@@ -29,6 +29,9 @@ public class GrayCode {
 
         System.out.println(obj.grayCodes2(3));
 
+        StackTraceElement traceElement[]= Thread.currentThread().getStackTrace();
+        System.out.println(traceElement.length);
+
     }
 
 

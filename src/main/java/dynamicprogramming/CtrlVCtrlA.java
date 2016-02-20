@@ -19,7 +19,7 @@ public class CtrlVCtrlA {
         int b;  // To pick a breakpoint
 
         // Initializing the optimal lengths array for uptil 6 input
-        // strokes.
+        // strokes.u
         int n;
         for (n = 1; n <= 6; n++)
             screen[n - 1] = n;

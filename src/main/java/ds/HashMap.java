@@ -15,11 +15,19 @@ package ds;
  * If the field f is a long: calculate (int)(f ^ (f >>> 32));
  * If the field f is a float: calculate Float.floatToIntBits(f);
  * If the field f is a double: calculate Double.doubleToLongBits(f) and handle the return value like every long value;
- * If the field f is an object: Use the result of the hashCode() method or 0 if f == null;
+ * If\ the field f is an object: Use the result of the hashCode() method or 0 if f == null;
  * If the field f is an array: see every field as separate element and calculate the hash value in a recursive fashion and combine the values as described next.
  * 3	Combine the hash value c with result:
  * result = 37 * result + c
  * 4	Return result
+ *
+ * The value 31 was chosen because it is an odd prime.
+ * If it were even and the multiplication overflowed, information would be lost, as multiplication by 2 is equivalent to shifting.
+ * The advantage of using a prime is less clear, but it is traditional.
+ * A nice property of 31 is that the multiplication can be replaced by a shift and a subtraction for better performance: 31 * i == (i << 5) - i.
+ * Modern VMs do this sort of optimization automatically.
+ *
+ *
  */
 public class HashMap<K, V> {
 

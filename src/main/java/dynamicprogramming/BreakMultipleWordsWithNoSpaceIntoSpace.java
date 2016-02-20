@@ -1,5 +1,6 @@
 package dynamicprogramming;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -39,11 +40,8 @@ public class BreakMultipleWordsWithNoSpaceIntoSpace {
     public String breakWordDP(String word, Set<String> dict) {
         int T[][] = new int[word.length()][word.length()];
 
-        for (int i = 0; i < T.length; i++) {
-            for (int j = 0; j < T[i].length; j++) {
-                T[i][j] = -1; //-1 indicates string between i to j cannot be split
-            }
-        }
+        Arrays.fill(T,-1);
+
 
         //fill up the matrix in bottom up manner
         for (int l = 1; l <= word.length(); l++) {

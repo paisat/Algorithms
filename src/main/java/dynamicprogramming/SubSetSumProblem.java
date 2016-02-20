@@ -55,11 +55,11 @@ public class SubSetSumProblem {
 
     public static void main(String args[]) {
         SubSetSumProblem ss = new SubSetSumProblem();
-        int arr[] = { 1, 3, 5, 5, 2, 1, 1, 6 };
+        int arr[] = { 2,3,5};
         System.out.println(ss.partition(arr));
 
-        int arr1[] = { 2, 3, 7, 8 };
-        System.out.print(ss.subsetSum(arr1, 11));
+        int arr1[] = { 2, 3, 5 };
+        System.out.print(ss.subsetSum(arr1, 4));
 
     }
 }
