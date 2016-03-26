@@ -1,6 +1,5 @@
 package arrays;
 
-import dynamicprogramming.StringInterleaving;
 import java.util.Arrays;
 
 /**
@@ -34,18 +33,14 @@ public class MinSumAbsolute {
                 local_mn = b[j];
             }
             if (local_mn > c[k]) {
-                local_mn=c[k];
+                local_mn = c[k];
             }
 
-            if(local_mn==a[i]) {
+            if (local_mn == a[i]) {
                 i++;
-            }
-
-            else if(local_mn==b[j]){
+            } else if (local_mn == b[j]) {
                 j++;
-            }
-
-            else if(local_mn==c[k]){
+            } else if (local_mn == c[k]) {
                 k++;
             }
         }
@@ -55,7 +50,7 @@ public class MinSumAbsolute {
     }
 
 
-    public static void  main(String []args) {
+    public static void main(String[] args) {
         int a[] = { 90, 83, 16, 28, 45, 35, 63, 71, 3 };
         int b[] = { 95, 88, 19, 26, 48, 37, 69, 72, 1 };
         int c[] = { 91, 85, 15, 29, 43, 33, 66, 74, 2 };

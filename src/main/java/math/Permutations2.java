@@ -15,21 +15,23 @@ import java.util.List;
  * [1,1,2] have the following unique permutations:
  * [1,1,2], [1,2,1], and [2,1,1].
  * <p/>
- * Time Complexity : O(N!)
- *
- *
+ * Time Complexity : O(N! / r!  )
+ * <p/>
+ * Where r is unique repetitions.
+ * <p/>
+ * <p/>
+ * <p/>
  * Yes, the reason of sorting is to skip duplicates. Take [1, 2, 2, 3] for example, when pos equals 0, we have below cases
-
- (1,2,2,3) (pos = 0, i = 0)
-
- (2,1,2,3) (pos = 0, i = 1)
-
- (2,1,2,3) (pos = 0, i =2) skipped, since array[0]=array[2]; in other words, its subset (1,2,3) is the same as the second case (pos = 0, i=1)
-
- (3,1,2,2) (pos = 0, i =3)
-
- As we can see, the subset of the above four cases are still sorted. Amazing! Recursion continues.
- *
+ * <p/>
+ * (1,2,2,3) (pos = 0, i = 0)
+ * <p/>
+ * (2,1,2,3) (pos = 0, i = 1)
+ * <p/>
+ * (2,1,2,3) (pos = 0, i =2) skipped, since array[0]=array[2]; in other words, its subset (1,2,3) is the same as the second case (pos = 0, i=1)
+ * <p/>
+ * (3,1,2,2) (pos = 0, i =3)
+ * <p/>
+ * As we can see, the subset of the above four cases are still sorted. Amazing! Recursion continues.
  */
 public class Permutations2 {
 
@@ -37,7 +39,10 @@ public class Permutations2 {
 
         Permutations2 obj = new Permutations2();
 
-        obj.permuteUnique(new int[] { 1, 1 });
+        System.out.println(obj.permuteUnique(new int[] { 1, 2, 3,4 }));
+
+        System.out.println(obj.permutationsWithRepititions(new int[] { 2, 3, 4 }, 2));
+        System.out.println(obj.permutationsWithRepititions2(new int[] { 2, 3, 4 }, 2));
 
 
     }
@@ -66,7 +71,7 @@ public class Permutations2 {
     public void permutationHelper(List<Integer> nums, List<Integer> permutation, List<List<Integer>> result) {
 
         if (nums.size() == 0) {
-            List<Integer> perm=new ArrayList<Integer>();
+            List<Integer> perm = new ArrayList<Integer>();
             perm.addAll(permutation);
             result.add(perm);
         } else {
@@ -77,11 +82,11 @@ public class Permutations2 {
                     continue;
                 }
 
-                int element=nums.get(i);
+                int element = nums.get(i);
                 permutation.add(element);
                 nums.remove(i);
                 permutationHelper(nums, permutation, result);
-                nums.add(i,element);
+                nums.add(i, element);
                 permutation.remove(permutation.size() - 1);
             }
 
@@ -112,8 +117,75 @@ public class Permutations2 {
 
     private void swap(int nums[], int pos1, int pos2) {
         int temp = nums[pos1];
-        nums[pos1]= nums[pos2];
-        nums[pos2]= temp;
+        nums[pos1] = nums[pos2];
+        nums[pos2] = temp;
     }
+
+
+    /**
+     * Number of permutaions with repitition = n^k
+     */
+
+    public List<List<Integer>> permutationsWithRepititions(int arr[], int k) {
+
+        List<List<Integer>> permutations = new ArrayList<List<Integer>>();
+
+        if (arr != null && k > 0) {
+            permutationsRepititionHelper(new ArrayList<Integer>(), arr, permutations, k);
+        }
+
+        return permutations;
+    }
+
+    private void permutationsRepititionHelper(List<Integer> permutation, int[] list, List<List<Integer>> permutations, int k) {
+
+        if (permutation.size() == k) {
+
+            List<Integer> perm = new ArrayList<Integer>(permutation);
+            permutations.add(perm);
+
+        } else {
+
+            for (int i = 0; i < list.length; i++) {
+
+                permutation.add(list[i]);
+                permutationsRepititionHelper(permutation, list, permutations, k);
+                permutation.remove(permutation.size() - 1);
+
+            }
+
+        }
+
+    }
+
+
+    public List<List<Integer>> permutationsWithRepititions2(int arr[], int k) {
+
+        List<List<Integer>> permutations = new ArrayList<List<Integer>>();
+
+        if (arr != null && arr.length != 0 && k > 0) {
+
+            double number = Math.pow(arr.length, k);
+
+
+            for (int i = 0; i < number; i++) {
+
+                int num = i;
+                List<Integer> permutation = new ArrayList<Integer>();
+
+                for (int j = 0; j < k; j++) {
+                    int index = num % arr.length;
+                    permutation.add(arr[index]);
+                    num = num / arr.length;
+                }
+
+                permutations.add(permutation);
+
+            }
+        }
+
+        return permutations;
+    }
+
 
 }

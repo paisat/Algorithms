@@ -23,7 +23,7 @@ public class SquareRoot {
     public static void main(String[] args) {
 
         SquareRoot obj = new SquareRoot();
-        System.out.println(obj.squareRoot(1005));
+        System.out.println(obj.squareRoot(81));
     }
 
     float squareRoot(float n) {
@@ -47,7 +47,7 @@ public class SquareRoot {
     float squareRoot(int n) {
         int x = n;
         int y = 1;
-        while (x > y) {
+        while (x != y) {
             x = (x + y) / 2;
             y = n / x;
         }

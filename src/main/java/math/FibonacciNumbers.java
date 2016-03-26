@@ -12,6 +12,16 @@ import java.util.List;
  * Value Increases by O(1.6^N)
  * Digits increase in n log (1.6)
  *
+ *
+ * To Find nExt fiobonacci number then use round (Fn * golden ratio )
+ *
+ *
+ * Golden ratio : (1+root(5))/2;
+ *
+ * its from quadratic equation x^2-x-1=0;
+ *
+ *
+ *
  */
 public class FibonacciNumbers {
 
@@ -27,6 +37,9 @@ public class FibonacciNumbers {
         // System.out.println(obj.fibonacciNumbersDynamicProgramming(2000).toString());
 
         List<List<Integer>> result =new ArrayList<List<Integer>>();
+
+
+        System.out.println(obj.fibonacciNumberBinetFormulae(12));
 
 
 
@@ -185,6 +198,23 @@ public class FibonacciNumbers {
         System.out.println("time taken :" + (System.currentTimeMillis() - millis) / 1000.0);
 
         return b;
+    }
+
+
+
+    public double fibonacciNumberBinetFormulae(int n){
+
+        if(n==1 || n==2){
+            return 1;
+        }
+
+        double phi=(1+Math.sqrt(5))/2;
+        double minumsPhi=(1-Math.sqrt(5))/2;
+
+
+        double number=(Math.pow(phi,n)-(Math.pow(minumsPhi,n)))/Math.sqrt(5);
+
+        return  Math.ceil(number);
 
     }
 

@@ -1,4 +1,4 @@
-package arrays;
+package dynamicprogramming;
 
 /**
  * Created by sarvothampai on 16/10/15.

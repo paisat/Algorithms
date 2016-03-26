@@ -25,6 +25,9 @@ import java.util.Iterator;
  * <p/>
  * <p/>
  * Follow up: How would you extend your design to be generic and work with all types, not just integer?
+ *
+ *
+ * //ToDO Google
  */
 public class PeekingIterator implements Iterator<Integer> {
 

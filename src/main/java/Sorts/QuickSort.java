@@ -45,16 +45,17 @@ public class QuickSort {
     private int partition(int low, int high, int arr[]) {
 
         int x = arr[high];
-        int i = 0;
+        int i = -1;
 
         for (int j = 0; j <= high; j++) {
 
             if (arr[j] <= x) {
 
+                i++;
                 int temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
-                i++;
+
 
 
             }

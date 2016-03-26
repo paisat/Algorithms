@@ -1,4 +1,4 @@
-package arrays;
+package dynamicprogramming;
 
 /**
  * Created by sarvothampai on 16/10/15.
@@ -7,8 +7,8 @@ package arrays;
  * You may complete as many transactions as you like (ie, buy one and sell one share of the stock multiple times).
  * However, you may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).
  * <p/>
- *
- *
+ * <p/>
+ * <p/>
  * Time Complexity : O(n)
  */
 public class BestTimeToBuyAndSellStock2 {
@@ -51,7 +51,7 @@ public class BestTimeToBuyAndSellStock2 {
 
                     profit += maxima - minima;
 
-                    i++;
+                    i=i+2;
 
                 }
 
@@ -62,6 +62,20 @@ public class BestTimeToBuyAndSellStock2 {
         return profit;
 
 
+    }
+
+
+    /**
+     * Time Complexity : O(N)
+     * Space Complexity : O(1)
+     */
+    public int maxProfit2(int[] prices) {
+        int total = 0;
+        for (int i = 0; i < prices.length - 1; i++) {
+            if (prices[i + 1] > prices[i]) total += prices[i + 1] - prices[i];
+        }
+
+        return total;
     }
 
 }

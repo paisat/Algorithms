@@ -10,7 +10,7 @@ public class AtoI {
 
         AtoI atoI = new AtoI();
         System.out.println(Integer.MAX_VALUE);
-        System.out.println(atoI.myAtoi("45.56"));
+        System.out.println(atoI.myAtoi("-2147483648"));
     }
 
     public int myAtoi(String str) {

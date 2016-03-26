@@ -59,9 +59,9 @@ public class CombinationsOfAString {
                     continue;
                 }
 
-
-                combinationHelperWithoutRepetitions(prefix + str.charAt(i), str, combinations, k, i + 1, used);
                 used[str.charAt(i)] = true;
+                combinationHelperWithoutRepetitions(prefix + str.charAt(i), str, combinations, k, i + 1, used);
+
 
             }
 

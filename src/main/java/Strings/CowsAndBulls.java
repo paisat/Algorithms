@@ -28,6 +28,12 @@ import java.util.Map;
  * Friend's guess: "0111"
  * In this case, the 1st 1 in friend's guess is a bull, the 2nd or 3rd 1 is a cow, and your function should return "1A1B".
  * You may assume that the secret number and your friend's guess only contain digits, and their lengths are always equal.
+ *
+ *
+ * Time Complexity : O(N) . Where N is the length of the string.
+ * Space Complexity : O(1)
+ *
+ *
  */
 public class CowsAndBulls {
 
@@ -42,45 +48,40 @@ public class CowsAndBulls {
 
     public String getHint(String secret, String guess) {
 
-        String result = null;
 
-        if (secret != null && secret.length() != 0 && guess != null && guess.length() != 0) {
+        int digitCount[]=new int[10];
+        int bulls=0,cows=0;
 
-            Map<String, List<Integer>> charIndexes = new HashMap<String, List<Integer>>();
+        for(int i=0;i<secret.length();i++){
 
-            int cows = 0;
-            int bulls = 0;
+            int s= Character.getNumericValue(secret.charAt(i));
+            int g=Character.getNumericValue(guess.charAt(i));
 
-
-            for (int i = 0; i < secret.length(); i++) {
-
-                if (charIndexes.containsKey(secret.charAt(i)+"")) {
-                    charIndexes.get(secret.charAt(i)+"").add(i);
-                } else {
-                    List<Integer> indexes = new ArrayList<Integer>();
-                    indexes.add(i);
-                    charIndexes.put(secret.charAt(i) + "", indexes);
-                }
+            if(s==g){
+                bulls++;
             }
+            else{
 
-            for (int i = 0; i < guess.length(); i++) {
-
-                String a = guess.charAt(i)+"";
-
-                if (charIndexes.containsKey(a) && charIndexes.get(a).contains(i)) {
-                    bulls++;
-                } else if (charIndexes.containsKey(a)) {
+                if(digitCount[g]>0){
                     cows++;
                 }
 
+                if(digitCount[s]<0){
+                    cows++;
+                }
+
+                digitCount[s]++;
+                digitCount[g]--;
+
+
+
             }
-
-            result = bulls + "A" + cows + "B";
-
 
         }
 
-        return result;
+        return bulls+"A"+cows+"B";
+
+
 
     }
 }

@@ -1,5 +1,9 @@
 package arrays;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by sarvothampai on 16/10/15.
  * <p/>
@@ -15,33 +19,63 @@ public class LargestSumContigiousSubArray {
 
         LargestSumContigiousSubArray obj = new LargestSumContigiousSubArray();
 
-        System.out.println(obj.maxSubArray(new int[] { -1, -2, -3 }));
+        //System.out.println(obj.maxSubArray(new int[] { -1, -2, -3 }));
+
+        List<Integer> input=new ArrayList<Integer>();
+        input.add(-2);
+        input.add(-5);
+        input.add(-1);
+        input.add(456);
+        input.add(-3);
+
+        System.out.println(obj.maxSubArray(input));
 
     }
 
-    public int maxSubArray(int[] nums) {
+    public List<Integer> maxSubArray(List<Integer> nums) {
 
-        int curMax = nums[0], maxSoFar = nums[0];
+        List<Integer> result=new ArrayList<Integer>();
 
-        for (int i = 1; i < nums.length; i++) {
+        if(nums!=null && nums.size()!=0) {
 
-            curMax = Math.max(nums[i], curMax + nums[i]);
-            maxSoFar = Math.max(maxSoFar, curMax);
+            int curMax = nums.get(0), maxSoFar = nums.get(0);
+            int start = 0, end = 0;
+            int tempStart = 0, tempEnd = 0;
+
+
+            for (int i = 1; i < nums.size(); i++) {
+
+                if (curMax + nums.get(i) > nums.get(i)) {
+                    curMax = curMax + nums.get(i);
+                    tempEnd = i;
+                } else {
+                    curMax = nums.get(i);
+                    tempStart = i;
+                    tempEnd = i;
+                }
+
+                if (curMax > maxSoFar) {
+                    start = tempStart;
+                    end = tempEnd;
+                }
+
+                maxSoFar = Math.max(maxSoFar, curMax);
+            }
+
+            result.addAll(nums.subList(start,end+1));
+
         }
 
-        return maxSoFar;
+        return result;
 
     }
 
 
     /**
-     *
-     *
-     *  Complexity :  n(Log n)
-     *
+     * Complexity :  n(Log n)
+     * <p/>
      * T(n) = 2T(N/2) + O(N)
-     *
-     * */
+     */
     int maxCrossingSum(int arr[], int l, int m, int h) {
         // Include elements on left of mid.
         int sum = 0;

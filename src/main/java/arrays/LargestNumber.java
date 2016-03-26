@@ -11,52 +11,51 @@ import java.util.Comparator;
  * For example, given [3, 30, 34, 5, 9], the largest formed number is 9534330.
  * <p/>
  * Note: The result may be very large, so you need to return a string instead of an integer.
+ *
+ * //TODO Google
+ *
+ * Time Complexity : O(n log n)
+ *
  */
 public class LargestNumber {
 
-    public static void main(String []args){
+    public static void main(String[] args) {
 
-        int nums[]={3,30,34,5,9};
+        Integer nums[] = { 3, 30, 34, 5, 9 };
+        Integer nums2[]={9,918,917};
+        Integer nums3[]={1,112,113};
 
-        LargestNumber obj=new LargestNumber();
+        LargestNumber obj = new LargestNumber();
 
         System.out.println(obj.largestNumber(nums));
-
+        System.out.println(obj.largestNumber(nums2));
+        System.out.println(obj.largestNumber(nums3));
 
 
     }
 
-    public String largestNumber(int[] nums) {
+    public String largestNumber(Integer[] nums) {
 
 
         String result = null;
 
         if (nums != null && nums.length != 0) {
 
-            String numsString[] = new String[nums.length];
-
-            int i = 0;
-            for (int num : nums) {
-                numsString[i] = String.valueOf(num);
-                i++;
-            }
-
-
             // Example [121,12]
-            Arrays.sort(numsString, new Comparator<String>() {
-                public int compare(String s1, String s2) {
-                    return (s2 + s1).compareTo(s1 + s2);
+            Arrays.sort(nums, new Comparator<Integer>() {
+                public int compare(Integer s1, Integer s2) {
+                    return (s2.toString() + s1.toString() ).compareTo(s1.toString() + s2.toString() );
                 }
             });
 
-            if (numsString[0].equals("0")) {
+            if (nums[0] == 0) {
                 return "0";
             }
 
             result = "";
 
-            for (int j = 0; j <numsString.length; j++) {
-                result = result + numsString[j];
+            for (int j = 0; j < nums.length; j++) {
+                result = result + nums[j];
             }
         }
 
